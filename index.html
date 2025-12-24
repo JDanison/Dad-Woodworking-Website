@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handcrafted Excellence</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <i class="fas fa-hammer"></i>
+                <span class="logo-text">Danison Woodworks & Creations</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Handcrafted Excellence</h1>
+            <p class="hero-subtitle">Discover unique woodworking and 3D printed creations made with precision and passion</p>
+        </div>
+        <div class="scroll-indicator" onclick="document.querySelector('.categories-section').scrollIntoView({behavior: 'smooth'})">
+            <span>Scroll to Explore!</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="categories-grid">
+                <a href="#woodworking" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>Woodworking</h3>
+                    <p>Handcrafted wooden furniture, cutting boards, and decorative pieces made from premium hardwoods</p>
+                </a>
+                <a href="#3d-prints" class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>3D Prints</h3>
+                    <p>Custom 3D printed items including organizers, stands, and unique gadgets</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="products-grid">
+                <!-- Woodworking Products -->
+                <div id="woodworking" class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1565183997392-2f5d91c4c9de?w=400&h=400&fit=crop" alt="Cutting Board">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Custom Cutting Board</h3>
+                        <p class="product-price">$45.00</p>
+                        <p class="product-description">Handcrafted hardwood cutting board with food-safe mineral oil finish</p>
+                        <button class="btn btn-cart" data-product="Cutting Board" data-price="45.00" data-stripe-link="">
+                            <i class="fas fa-shopping-cart"></i>
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1595814433015-e6f5ce69c241?w=400&h=400&fit=crop" alt="Floating Shelf">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Floating Wall Shelf</h3>
+                        <p class="product-price">$65.00</p>
+                        <p class="product-description">Rustic wooden shelf perfect for displaying your favorite items</p>
+                        <button class="btn btn-cart" data-product="Floating Shelf" data-price="65.00" data-stripe-link="">
+                            <i class="fas fa-shopping-cart"></i>
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?w=400&h=400&fit=crop" alt="Desk Organizer">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Wooden Desk Organizer</h3>
+                        <p class="product-price">$35.00</p>
+                        <p class="product-description">Keep your workspace tidy with this elegant wooden organizer</p>
+                        <button class="btn btn-cart" data-product="Desk Organizer" data-price="35.00" data-stripe-link="">
+                            <i class="fas fa-shopping-cart"></i>
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 3D Printed Products -->
+                <div id="3d-prints" class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&h=400&fit=crop" alt="Phone Stand">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Adjustable Phone Stand</h3>
+                        <p class="product-price">$15.00</p>
+                        <p class="product-description">Custom color options available - perfect for any desk setup</p>
+                        <button class="btn btn-cart" data-product="Phone Stand" data-price="15.00" data-stripe-link="">
+                            <i class="fas fa-shopping-cart"></i>
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?w=400&h=400&fit=crop" alt="Cable Organizer">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Cable Management Clips</h3>
+                        <p class="product-price">$12.00</p>
+                        <p class="product-description">Set of 10 clips - keep your cables organized and tangle-free</p>
+                        <button class="btn btn-cart" data-product="Cable Clips" data-price="12.00" data-stripe-link="">
+                            <i class="fas fa-shopping-cart"></i>
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=400&h=400&fit=crop" alt="Custom 3D Print">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Custom 3D Print</h3>
+                        <p class="product-price">From $20.00</p>
+                        <p class="product-description">Have an idea? We can bring it to life with 3D printing!</p>
+                        <button class="btn btn-cart" data-product="Custom Print" data-price="20.00" data-stripe-link="">
+                            <i class="fas fa-shopping-cart"></i>
+                            Get Quote
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">About Us</h2>
+                <p>With years of experience in woodworking and a passion for modern technology, we combine traditional craftsmanship with 3D printing to create unique, quality products. Each piece is made with attention to detail and built to last.</p>
+                <p>Custom orders are always welcome!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="contact-subtitle">Have a question or custom order request?</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:contact@woodcraftshop.com">contact@woodcraftshop.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+15551234567">(555) 123-4567</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 WoodCraft Shop. Handcrafted with care.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
