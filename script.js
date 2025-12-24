@@ -1,3 +1,119 @@
+// Product filtering functionality
+let currentFilter = 'all';
+
+function filterProducts(category) {
+    const products = document.querySelectorAll('.product-card');
+    const title = document.getElementById('products-title');
+    const clearButton = document.getElementById('clear-filter');
+    
+    currentFilter = category;
+    
+    products.forEach(product => {
+        if (category === 'all') {
+            product.style.display = '';
+        } else {
+            if (product.dataset.category === category) {
+                product.style.display = '';
+            } else {
+                product.style.display = 'none';
+            }
+        }
+    });
+    
+    // Update title and show/hide clear button
+    if (category === 'all') {
+        title.textContent = 'All Products';
+        if (clearButton) clearButton.style.display = 'none';
+    } else if (category === 'woodworking') {
+        title.textContent = 'Woodworking Products';
+        if (clearButton) clearButton.style.display = 'block';
+    } else if (category === '3d-prints') {
+        title.textContent = '3D Print Products';
+        if (clearButton) clearButton.style.display = 'block';
+    }
+    
+    // Sort products alphabetically
+    sortProductsAlphabetically();
+}
+
+function sortProductsAlphabetically() {
+    const grid = document.querySelector('.products-grid');
+    if (!grid) return;
+    
+    const products = Array.from(document.querySelectorAll('.product-card'));
+    
+    // Filter visible products
+    const visibleProducts = products.filter(p => p.style.display !== 'none');
+    
+    // Sort by product title
+    visibleProducts.sort((a, b) => {
+        const titleA = a.querySelector('.product-title').textContent;
+        const titleB = b.querySelector('.product-title').textContent;
+        return titleA.localeCompare(titleB);
+    });
+    
+    // Re-append in sorted order
+    visibleProducts.forEach(product => {
+        grid.appendChild(product);
+    });
+}
+
+// Check URL parameters and apply filter on page load
+function checkURLFilter() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const filterParam = urlParams.get('filter');
+    
+    if (filterParam && (filterParam === 'woodworking' || filterParam === '3d-prints')) {
+        filterProducts(filterParam);
+        // Scroll to products section
+        setTimeout(() => {
+            const productsSection = document.getElementById('products');
+            if (productsSection) {
+                productsSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }, 100);
+    } else {
+        sortProductsAlphabetically();
+    }
+}
+
+// Set up category card click handlers and URL filter check
+document.addEventListener('DOMContentLoaded', () => {
+    // Check for URL filter parameter
+    checkURLFilter();
+    
+    // Category card filters (for shop page)
+    const categoryCards = document.querySelectorAll('.category-card[data-filter]');
+    categoryCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            e.preventDefault();
+            const filter = card.dataset.filter;
+            filterProducts(filter);
+            
+            // Update URL without reload
+            const url = new URL(window.location);
+            url.searchParams.set('filter', filter);
+            window.history.pushState({}, '', url);
+            
+            // Scroll to products section
+            document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+    
+    // Clear filter button
+    const clearButton = document.getElementById('clear-filter');
+    if (clearButton) {
+        clearButton.addEventListener('click', () => {
+            filterProducts('all');
+            
+            // Clear URL parameter
+            const url = new URL(window.location);
+            url.searchParams.delete('filter');
+            window.history.pushState({}, '', url);
+        });
+    }
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
