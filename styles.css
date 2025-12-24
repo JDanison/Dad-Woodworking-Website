@@ -353,14 +353,14 @@ body {
 
 /* Contact Section */
 .contact-section {
-    background-color: var(--wood-dark);
-    color: var(--warm-white);
+    background-color: rgba(232, 221, 208, 0.3);
+    color: var(--text-dark);
     padding: 5rem 2rem;
     text-align: center;
 }
 
 .contact-section .section-title {
-    color: var(--warm-white);
+    color: var(--text-dark);
 }
 
 .contact-subtitle {
@@ -390,13 +390,13 @@ body {
 }
 
 .contact-item a {
-    color: var(--warm-white);
+    color: var(--text-dark);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .contact-item a:hover {
-    color: var(--accent-amber);
+    color: var(--wood-brown);
 }
 
 /* Footer */

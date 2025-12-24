@@ -29,14 +29,14 @@
         <div class="container">
             <h2 class="section-title">Shop by Category</h2>
             <div class="categories-grid">
-                <a href="#woodworking" class="category-card">
+                <a href="#products" class="category-card" data-filter="woodworking">
                     <div class="category-icon">
                         <i class="fas fa-tree"></i>
                     </div>
                     <h3>Woodworking</h3>
                     <p>Handcrafted. Wooden. Quality. Custom CNC cut pieces, epoxy inlays, and hand-finished details made with care you can see and feel.</p>
                 </a>
-                <a href="#3d-prints" class="category-card">
+                <a href="#products" class="category-card" data-filter="3d-prints">
                     <div class="category-icon">
                         <i class="fas fa-cube"></i>
                     </div>
@@ -50,10 +50,13 @@
     <!-- Featured Products Section -->
     <section id="products" class="products-section">
         <div class="container">
-            <h2 class="section-title">All Products</h2>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+                <h2 class="section-title" id="products-title" style="margin-bottom: 0;">All Products</h2>
+                <button id="clear-filter" class="btn btn-outline" style="display: none;">Back To All Products</button>
+            </div>
             <div class="products-grid">
                 <!-- Woodworking Products -->
-                <div id="woodworking" class="product-card">
+                <div id="woodworking" class="product-card" data-category="woodworking">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=400&fit=crop" alt="Cutting Board">
                     </div>
@@ -68,7 +71,7 @@
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-category="woodworking">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop" alt="Floating Shelf">
                     </div>
@@ -83,7 +86,7 @@
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-category="woodworking">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?w=400&h=400&fit=crop" alt="Desk Organizer">
                     </div>
@@ -99,7 +102,7 @@
                 </div>
 
                 <!-- 3D Printed Products -->
-                <div id="3d-prints" class="product-card">
+                <div id="3d-prints" class="product-card" data-category="3d-prints">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&h=400&fit=crop" alt="Phone Stand">
                     </div>
@@ -114,7 +117,7 @@
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-category="3d-prints">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?w=400&h=400&fit=crop" alt="Cable Organizer">
                     </div>
@@ -129,7 +132,7 @@
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-category="3d-prints">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=400&h=400&fit=crop" alt="Custom 3D Print">
                     </div>
@@ -148,8 +151,19 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer id="contact" class="footer">
         <div class="container">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-dark);">Get In Touch</h3>
+            <div class="contact-info" style="margin-bottom: 1.5rem;">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:contact@woodcraftshop.com">contact@woodcraftshop.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+15551234567">(555) 123-4567</a>
+                </div>
+            </div>
             <p>&copy; 2025 Danison Woodworks & Creations. Handcrafted with care.</p>
         </div>
     </footer>
