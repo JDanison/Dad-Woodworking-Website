@@ -512,8 +512,17 @@ html {
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
-        gap: 1rem;
+        gap: 0.75rem;
+        font-size: 1rem;
+    }
+    
+    .logo-text {
         font-size: 0.9rem;
+        line-height: 1.2;
+    }
+    
+    .navbar {
+        padding: 0.75rem 0;
     }
     
     .hero {
@@ -521,28 +530,54 @@ html {
         padding: 1rem;
     }
     
+    .hero-content {
+        padding: 2rem 1.5rem;
+        max-width: 90%;
+    }
+    
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        line-height: 1.2;
     }
     
     .hero-subtitle {
-        font-size: 1.125rem;
+        font-size: 1rem;
+    }
+    
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
     }
     
     .scroll-indicator {
         bottom: 1rem;
+        font-size: 0.85rem;
     }
     
     .section-title {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
     
     .products-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .product-card {
+        max-width: 100%;
     }
     
     .categories-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .category-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .category-icon i {
+        font-size: 2.5rem;
     }
     
     .contact-info {
@@ -551,7 +586,88 @@ html {
     }
     
     .container {
-        padding: 0 1rem;
+        padding: 0 0.25rem;
+    }
+    
+    .nav-container {
+        padding: 0 0.25rem;
+    }
+    
+    .hero {
+        padding: 1rem 0.25rem;
+    }
+    
+    .footer {
+        padding: 2rem 0.25rem;
+    }
+    
+    /* Modal improvements for mobile */
+    .product-modal {
+        padding: 1rem 0.5rem;
+    }
+    
+    .modal-body {
+        padding: 1.5rem 1rem;
+    }
+    
+    .modal-details h2 {
+        font-size: 1.5rem;
+    }
+    
+    .modal-price {
+        font-size: 1.5rem;
+    }
+    
+    .modal-close {
+        width: 35px;
+        height: 35px;
+        font-size: 1.25rem;
+    }
+    
+    .modal-actions .btn {
+        width: 100%;
+        min-width: auto;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .nav-links {
+        gap: 0.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .logo-text {
+        font-size: 0.85rem;
+        line-height: 1.2;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .product-price {
+        font-size: 1.25rem;
+    }
+    
+    .product-description {
+        font-size: 0.9rem;
+    }
+    
+    .category-card h3 {
+        font-size: 1.25rem;
+    }
+    
+    .category-card p {
+        font-size: 0.9rem;
     }
 }
 
