@@ -525,6 +525,12 @@ html {
         padding: 0.75rem 0;
     }
     
+    /* Fix background image on mobile */
+    .hero {
+        background-attachment: scroll;
+        background-position: center center;
+    }
+    
     .hero {
         min-height: 100vh;
         padding: 1rem;
