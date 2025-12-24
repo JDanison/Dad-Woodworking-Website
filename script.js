@@ -243,3 +243,83 @@ window.addEventListener('load', () => {
  * 8. Repeat for all products
  * 9. Test by clicking a buy button - it should redirect to Stripe's checkout page
  */
+
+// Product Modal Functionality
+function openProductModal(productId) {
+    const product = getProduct(productId);
+    if (!product) return;
+    
+    const modal = document.getElementById('productModal');
+    
+    // Populate modal content
+    document.getElementById('modalImage').src = product.image;
+    document.getElementById('modalImage').alt = product.name;
+    document.getElementById('modalTitle').textContent = product.name;
+    document.getElementById('modalPrice').textContent = `$${product.price.toFixed(2)}`;
+    document.getElementById('modalDescription').textContent = product.fullDescription;
+    document.getElementById('modalDimensions').textContent = product.dimensions;
+    document.getElementById('modalMaterials').textContent = product.materials;
+    
+    // Populate features list
+    const featuresList = document.getElementById('modalFeatures');
+    featuresList.innerHTML = '';
+    product.features.forEach(feature => {
+        const li = document.createElement('li');
+        li.textContent = feature;
+        featuresList.appendChild(li);
+    });
+    
+    // Set up Buy Now button
+    const buyButton = document.getElementById('modalBuyButton');
+    buyButton.onclick = () => {
+        if (product.stripeLink && product.stripeLink !== '') {
+            window.location.href = product.stripeLink;
+        } else {
+            alert('Payment link not configured yet. Please contact us directly to purchase this item.');
+        }
+    };
+    
+    // Show modal
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeProductModal() {
+    const modal = document.getElementById('productModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Close modal when clicking outside
+document.addEventListener('click', (e) => {
+    const modal = document.getElementById('productModal');
+    if (e.target === modal) {
+        closeProductModal();
+    }
+});
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeProductModal();
+    }
+});
+
+// Make product cards clickable
+document.addEventListener('DOMContentLoaded', () => {
+    const productCards = document.querySelectorAll('.product-card');
+    productCards.forEach(card => {
+        // Make entire card clickable except for buttons
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', (e) => {
+            // Don't open modal if clicking the buy button
+            if (e.target.closest('.btn-cart')) {
+                return;
+            }
+            const productId = card.id;
+            if (productId) {
+                openProductModal(productId);
+            }
+        });
+    });
+});

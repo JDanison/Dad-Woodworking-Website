@@ -56,7 +56,7 @@
             </div>
             <div class="products-grid">
                 <!-- Woodworking Products -->
-                <div id="woodworking" class="product-card" data-category="woodworking">
+                <div id="cutting-board" class="product-card" data-category="woodworking">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=400&fit=crop" alt="Cutting Board">
                     </div>
@@ -71,7 +71,7 @@
                     </div>
                 </div>
 
-                <div class="product-card" data-category="woodworking">
+                <div id="floating-shelf" class="product-card" data-category="woodworking">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop" alt="Floating Shelf">
                     </div>
@@ -86,7 +86,7 @@
                     </div>
                 </div>
 
-                <div class="product-card" data-category="woodworking">
+                <div id="desk-organizer" class="product-card" data-category="woodworking">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?w=400&h=400&fit=crop" alt="Desk Organizer">
                     </div>
@@ -102,7 +102,7 @@
                 </div>
 
                 <!-- 3D Printed Products -->
-                <div id="3d-prints" class="product-card" data-category="3d-prints">
+                <div id="phone-stand" class="product-card" data-category="3d-prints">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400&h=400&fit=crop" alt="Phone Stand">
                     </div>
@@ -117,7 +117,7 @@
                     </div>
                 </div>
 
-                <div class="product-card" data-category="3d-prints">
+                <div id="cable-clips" class="product-card" data-category="3d-prints">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?w=400&h=400&fit=crop" alt="Cable Organizer">
                     </div>
@@ -132,7 +132,7 @@
                     </div>
                 </div>
 
-                <div class="product-card" data-category="3d-prints">
+                <div id="custom-print" class="product-card" data-category="3d-prints">
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?w=400&h=400&fit=crop" alt="Custom 3D Print">
                     </div>
@@ -168,6 +168,41 @@
         </div>
     </footer>
 
+    <!-- Product Modal -->
+    <div id="productModal" class="product-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeProductModal()">&times;</button>
+            <div class="modal-body">
+                <div>
+                    <img id="modalImage" class="modal-image" src="" alt="">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modalTitle"></h2>
+                    <p class="modal-price" id="modalPrice"></p>
+                    <p class="modal-description" id="modalDescription"></p>
+                    
+                    <div class="modal-features">
+                        <h3>Features:</h3>
+                        <ul id="modalFeatures"></ul>
+                    </div>
+                    
+                    <div class="modal-specs">
+                        <p><strong>Dimensions:</strong> <span id="modalDimensions"></span></p>
+                        <p><strong>Materials:</strong> <span id="modalMaterials"></span></p>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <button class="btn btn-primary" id="modalBuyButton">
+                            <i class="fas fa-shopping-cart"></i>
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="products-data.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Danison Woodworks & Creations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .product-detail-page {
+            margin-top: 100px;
+            padding: 3rem 0;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .product-detail-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .product-detail-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-detail-info h1 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+        }
+        
+        .product-detail-price {
+            font-size: 2rem;
+            color: var(--wood-brown);
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-detail-description {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .product-detail-features {
+            background-color: rgba(232, 221, 208, 0.3);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .product-detail-features h3 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .product-detail-features ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .product-detail-features li {
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .product-detail-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--wood-brown);
+            font-weight: bold;
+        }
+        
+        .product-detail-specs {
+            border-top: 2px solid var(--border-color);
+            padding-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .product-detail-specs h3 {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .product-detail-specs p {
+            color: var(--text-muted);
+            margin: 0.5rem 0;
+        }
+        
+        .product-detail-specs strong {
+            color: var(--wood-dark);
+        }
+        
+        .product-detail-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .product-detail-actions .btn {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            justify-content: center;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--wood-brown);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .back-link:hover {
+            color: var(--wood-dark);
+        }
+        
+        @media (max-width: 768px) {
+            .product-detail-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-detail-image {
+                height: 350px;
+            }
+            
+            .product-detail-info h1 {
+                font-size: 2rem;
+            }
+            
+            .product-detail-price {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-hammer"></i>
+                <span class="logo-text">Danison Woodworks & Creations</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <div class="product-detail-page">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+            <a href="shop.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Shop
+            </a>
+        </div>
+        
+        <div class="product-detail-container">
+            <div>
+                <img id="productImage" class="product-detail-image" src="" alt="">
+            </div>
+            
+            <div class="product-detail-info">
+                <h1 id="productName"></h1>
+                <p class="product-detail-price" id="productPrice"></p>
+                <p class="product-detail-description" id="productDescription"></p>
+                
+                <div class="product-detail-features">
+                    <h3>Key Features</h3>
+                    <ul id="productFeatures"></ul>
+                </div>
+                
+                <div class="product-detail-specs">
+                    <h3>Specifications</h3>
+                    <p><strong>Dimensions:</strong> <span id="productDimensions"></span></p>
+                    <p><strong>Materials:</strong> <span id="productMaterials"></span></p>
+                </div>
+                
+                <div class="product-detail-actions">
+                    <button class="btn btn-primary" id="productBuyButton">
+                        <i class="fas fa-shopping-cart"></i>
+                        Buy Now
+                    </button>
+                    <a href="contact.html" class="btn btn-outline">
+                        <i class="fas fa-envelope"></i>
+                        Ask a Question
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-dark);">Get In Touch</h3>
+            <div class="contact-info" style="margin-bottom: 1.5rem;">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:contact@woodcraftshop.com">contact@woodcraftshop.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+15551234567">(555) 123-4567</a>
+                </div>
+            </div>
+            <p>&copy; 2025 Danison Woodworks & Creations. Handcrafted with care.</p>
+        </div>
+    </footer>
+
+    <script src="products-data.js"></script>
+    <script>
+        // Load product details from URL parameter
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get('id');
+            
+            if (!productId) {
+                window.location.href = 'shop.html';
+                return;
+            }
+            
+            const product = getProduct(productId);
+            
+            if (!product) {
+                window.location.href = 'shop.html';
+                return;
+            }
+            
+            // Update page title
+            document.title = `${product.name} - Danison Woodworks & Creations`;
+            
+            // Populate product details
+            document.getElementById('productImage').src = product.image;
+            document.getElementById('productImage').alt = product.name;
+            document.getElementById('productName').textContent = product.name;
+            document.getElementById('productPrice').textContent = `$${product.price.toFixed(2)}`;
+            document.getElementById('productDescription').textContent = product.fullDescription;
+            document.getElementById('productDimensions').textContent = product.dimensions;
+            document.getElementById('productMaterials').textContent = product.materials;
+            
+            // Populate features
+            const featuresList = document.getElementById('productFeatures');
+            product.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+            
+            // Set up Buy Now button
+            const buyButton = document.getElementById('productBuyButton');
+            buyButton.onclick = () => {
+                if (product.stripeLink && product.stripeLink !== '') {
+                    window.location.href = product.stripeLink;
+                } else {
+                    alert('Payment link not configured yet. Please contact us directly to purchase this item.');
+                }
+            };
+        });
+    </script>
+</body>
+</html>
