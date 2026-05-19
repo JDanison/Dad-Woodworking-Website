@@ -19,6 +19,25 @@ const products = {
         materials: 'Walnut, Maple, Cherry',
         stripeLink: ''
     },
+        'Clocks': {
+        id: 'Clocks',
+        name: 'Custom Clocks',
+        category: 'woodworking',
+        price: 100.00,
+        image: 'images/Clocks/GryffindoorClock.JPG',
+        shortDescription: 'Customized hardwood clock with epoyx inlay',
+        fullDescription: 'This beautiful clock is handcrafted from premium hardwood and inlaid with colorful epoxy resin. Each clock is unique with its own grain pattern. Perfect for any occassion or sports fan',
+        features: [
+            'Premium hardwood construction',
+            'Colorful Epoxy inlays',
+            'Hand-sanded and polished surface',
+            'Perfect gift for a sports/movie fan or to celebrate an important event ',
+            'Runs on a single AA Battery'
+        ],
+        dimensions: 'Approximately 10-14" in diameter and 1" thick"',
+        materials: 'Maple, Cherry, or Oak',
+        stripeLink: ''
+    },
     'floating-shelf': {
         id: 'floating-shelf',
         name: 'Floating Wall Shelf',
